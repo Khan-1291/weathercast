@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherCast - Your Weather Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">☀️</div>
+                    <h1>WeatherCast</h1>
+                </div>
+                <div class="search-container">
+                    
+                    <form action="">
+                        <input type="text" class="search-input" id="citySelect" placeholder="Search for your city">
+          <!--  <select name="city" class="search-input" id="citySelect">
+  <option value="">Select a City</option>
+  <option value="Lahore">Lahore</option>
+  <option value="Faisalabad">Faisalabad</option>
+  <option value="Rawalpindi">Rawalpindi</option>
+  <option value="Gujranwala">Gujranwala</option>
+  <option value="Multan">Multan</option>
+  <option value="Bahawalpur">Bahawalpur</option>
+  <option value="Sargodha">Sargodha</option>
+  <option value="Sialkot">Sialkot</option>
+  <option value="Sheikhupura">Sheikhupura</option>
+  <option value="Gujrat">Gujrat</option>
+  <option value="Sahiwal">Sahiwal</option>
+  <option value="Okara">Okara</option>
+  <option value="Rahimyar Khan">Rahimyar Khan</option>
+  <option value="Jhang City">Jhang City</option>
+  <option value="Chiniot">Chiniot</option>
+  <option value="Kasur">Kasur</option>
+  <option value="Burewala">Burewala</option>
+  <option value="Dera Ghazi Khan">Dera Ghazi Khan</option>
+  <option value="Sadiqabad">Sadiqabad</option>
+  <option value="Muridke">Muridke</option>
+  <option value="Muzaffargarh">Muzaffargarh</option>
+  <option value="Khanpur">Khanpur</option>
+  <option value="Gojra">Gojra</option>
+  <option value="Mandi Bahauddin">Mandi Bahauddin</option>
+  <option value="Pakpattan">Pakpattan</option>
+  <option value="Jaranwala">Jaranwala</option>
+  <option value="Kamalia">Kamalia</option>
+  <option value="Kot Addu">Kot Addu</option>
+  <option value="Ahmadpur East">Ahmadpur East</option>
+  <option value="Ahmed Nager Chatha">Ahmed Nager Chatha</option>
+  <option value="Alipur">Alipur</option>
+  <option value="Arifwala">Arifwala</option>
+  <option value="Attock">Attock</option>
+  <option value="Bhera">Bhera</option>
+  <option value="Bhalwal">Bhalwal</option>
+  <option value="Bahawalnagar">Bahawalnagar</option>
+  <option value="Bhakkar">Bhakkar</option>
+  <option value="Chillianwala">Chillianwala</option>
+  <option value="Chakwal">Chakwal</option>
+  <option value="Chichawatni">Chichawatni</option>
+  <option value="Chishtian">Chishtian</option>
+  <option value="Daska">Daska</option>
+  <option value="Mardan">Darya Khan</option>
+</select>-->
+
+ <button type="button" class="search-btn" onclick="cheakweather();gethourdata();weaklyforcast()">🔍</button>
+ 
+        </form>
+  
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Current Weather Card -->
+            <section class="current-weather">
+                <div class="current-weather-content">
+                    <div class="location-info">
+                        <h2 class="city-name" id="city-name"></h2>
+                        <p class="date-time" id="date"></p>
+                    </div>
+                    <div class="weather-main">
+                        <div class="temperature-section">
+                            <div class="temperature" id="temperature"></div>
+                            <div class="weather-description">
+                                <p class="condition" id="condition"></p><span id="icon"><img src=""  alt=""></span>
+                                <p class="feels-like" id="feels-like"></p>
+                            </div>
+                        </div>
+                        <div class="weather-icon">
+                            <div class="icon-large">⛅</div>
+                        </div>
+                    </div>
+                    <div class="weather-details" id="weather">
+                        <div class="detail-item">
+                            <span class="detail-icon">💨</span>
+                            <div class="detail-info">
+                                <span class="detail-label">Wind</span>
+                                <span class="detail-value" id="wind"></span>
+                            </div>
+                        </div>
+                        <div class="detail-item" id="Humidity1">
+                            <span class="detail-icon">💧</span>
+                            <div class="detail-info">
+                                <span class="detail-label">Humidity</span>
+                                <span class="detail-value" id="humidity"></span>
+                            </div>
+                        </div>
+                        <div class="detail-item" id="Visibility">
+                            <span class="detail-icon">👁️</span>
+                            <div class="detail-info">
+                                <span class="detail-label">Visibility</span>
+                                <span class="detail-value" id="visibility"></span>
+                            </div>
+                        </div>
+                        <div class="detail-item" id="Pressure">
+                            <span class="detail-icon">🌡️</span>
+                            <div class="detail-info">
+                                <span class="detail-label">Pressure</span>
+                                <span class="detail-value" id="pressure"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hourly Forecast -->
+            <section class="hourly-forecast">
+                <h3 class="section-title">Hourly Forecast</h3>
+                <div class="hourly-scroll" id="hourly-forecast">
+
+                
+                    
+                </div>
+            </section>
+
+            <!-- weekly Forecast -->
+            <section class="weekly-forecast">
+                <h3 class="section-title">7-Day Forecast</h3>
+                <div class="forecast-list" id="forcastday">
+                    
+                    
+                </div>
+            </section>
+
+            <!-- Additional Info Cards
+            <section class="info-cards">
+                <div class="info-card">
+                    <h4 class="card-title">UV Index</h4>
+                    <div class="uv-info">
+                        <div class="uv-value">6</div>
+                        <div class="uv-level">High</div>
+                        <div class="uv-bar">
+                            <div class="uv-progress" style="width: 60%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h4 class="card-title">Sunrise & Sunset</h4>
+                    <div class="sun-times">
+                        <div class="sun-time">
+                            <span class="sun-icon">🌅</span>
+                            <div class="time-info">
+                                <span class="time-label">Sunrise</span>
+                                <span class="time-value">6:42 AM</span>
+                            </div>
+                        </div>
+                        <div class="sun-time">
+                            <span class="sun-icon">🌇</span>
+                            <div class="time-info">
+                                <span class="time-label">Sunset</span>
+                                <span class="time-value">7:18 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+            <section><footer class="footer">
+  <div class="footer-container">
+    <div class="footer-about">
+      <h3>About Me</h3>
+      <p>Providing quality services with passion and commitment in web desighn and devolpment. I am here to help you grow and succeed online.</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="https://khan-1291.github.io/zohaibkhanwebdevolper/">Portfolio</a></li>
+        <li><a href="https://khan-1291.github.io/zohaibkhanwebdevolper/#portfolio">Projects</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact</h3>
+  <p>Email: <a href="mailto:zohaibkhanwebdevolper@gmail.com">zohaibkhanwebdevolper@gmail.com</a></p>
+      <p>Phone: +92 316 5657 513</p>
+      <p>Address: Mardan, KPK, Pakistan</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Zohaib Khan. All rights reserved.</p>
+  </div>
+</footer>
+</section>
+        </main>
+    </div>
+    <script src="index.js"></script>
+    <script>
+         window.onload= function () {
+            cheakweather();
+            gethourdata();
+            weaklyforcast();
+            
+         }
+        
+    </script>
+</body>
+</html>
